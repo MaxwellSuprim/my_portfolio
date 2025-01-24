@@ -1,0 +1,167 @@
+.portfolio {
+  &__content {
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__filter {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 30px;
+      list-style-type: none;
+      padding: 0;
+      animation: fadeIn 1s ease-out; /* Fade-in animation for filter items */
+
+      li {
+        font-size: 18px;
+        cursor: pointer;
+        padding: 12px 20px;
+        color: var(--yellow-theme-main-color);
+        text-transform: uppercase;
+        border-radius: 25px;
+        transition: background 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards; /* Animation for each filter item */
+        animation-delay: 0.3s; /* Delay for each list item */
+        
+        &:hover {
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          background-color: var(--secondary-color);
+          color: var(--yellow-theme-sub-text-color);
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      animation: fadeIn 1s ease-out; /* Fade-in animation for cards */
+
+      &__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+        animation-delay: 0.5s; /* Staggered delay for each card item */
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        &__img-wrapper {
+          height: 100%;
+
+          a {
+            display: block;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+              transition: transform 0.3s ease;
+              opacity: 0;
+              animation: fadeIn 1s ease-out forwards;
+              animation-delay: 0.6s; /* Delay for images */
+            }
+
+            &:hover img {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: overlayAnimation 0.5s ease-out forwards; /* Animate overlay appearing */
+
+          .overlay-content {
+            text-align: center;
+            color: #76dbe7;
+
+            p {
+              font-size: 1.8rem;
+              margin: 0 0 1rem;
+              opacity: 0;
+              animation: typingEffect 2s steps(20) 1s forwards; /* Typing effect for text */
+            }
+
+            button {
+              background: var(--yellow-theme-main-color);
+              color: #000;
+              border: none;
+              padding: 10px 20px;
+              font-size: 1.2rem;
+              cursor: pointer;
+              border-radius: 5px;
+              transition: background 0.3s ease;
+
+              &:hover {
+                background: var(--yellow-theme-main-color-dark);
+              }
+            }
+          }
+        }
+      }
+
+      &__item:hover .overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes overlayAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes typingEffect {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .portfolio__content__filter {
+      flex-direction: column;
+    }
+  }
+}

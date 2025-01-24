@@ -1,0 +1,140 @@
+/* Global Styles */
+.resume {
+    height: 100%;
+    background: var(--background-color);  /* Change to dark background */
+    padding: 40px 20px;
+  }
+  
+  /* Timeline Section */
+  .timeline {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensures responsive layout */
+  
+    &__experience,
+    &__education {
+      flex: 1;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      
+      &__header-text {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--yellow-theme-main-color);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--yellow-theme-main-color);
+      }
+  
+      .vertical-timeline-element-title-wrapper {
+        margin-bottom: 1rem;
+        
+        h3 {
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--secondary-color);
+        }
+  
+        h4 {
+          font-size: 18px;
+          color: var(--yellow-theme-sub-text-color);
+          margin-top: 4px;
+        }
+      }
+  
+      .vertical-timeline-element-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--yellow-theme-sub-text-color);
+      }
+    }
+  
+    /* Experience Section */
+    &__experience {
+      .vertical-timeline-element-icon {
+        background-color: var(--yellow-theme-main-color);
+        border: none;
+        color: #fff;
+      }
+    }
+  
+    /* Education Section */
+    &__education {
+      .vertical-timeline-element-icon {
+        background-color: var(--yellow-theme-main-color);
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+  
+  /* Timeline Design */
+  .vertical-timeline-element-content {
+    box-shadow: none;
+  }
+  
+  .vertical-timeline-element-content-arrow {
+    display: none;
+  }
+  
+  .vertical-timeline-element-date {
+    color: var(--yellow-theme-sub-text-color);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Background and Line Colors */
+  .vertical-timeline-element {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--dark-bg);
+  }
+  
+  .vertical-timeline-element-icon {
+    border-radius: 50%;
+    border: 3px solid var(--yellow-theme-main-color);
+  }
+  
+  /* Timeline Connecting Line */
+  .timeline__experience::before,
+  .timeline__education::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--yellow-theme-main-color);
+    z-index: -1;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: column;
+    }
+  
+    .timeline__experience,
+    .timeline__education {
+      width: 100%;
+      gap: 1rem;
+    }
+    
+    .timeline__experience::before,
+    .timeline__education::before {
+      left: 12px;
+    }
+  }
+  
+  /* Colors */
+  :root {
+    --background-color: #101010; /* Dark background */
+    --yellow-theme-main-color: #f2b91f;
+    --yellow-theme-sub-text-color: #c0c0c0;
+    --dark-bg: #2a2a2a;
+  }
+  
