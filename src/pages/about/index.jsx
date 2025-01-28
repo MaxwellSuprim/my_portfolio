@@ -5,21 +5,23 @@ import { Animate } from "react-simple-animate";
 import { FaReact,FaUserAlt } from "react-icons/fa";
 import { AiOutlineRobot, AiOutlineBarChart } from "react-icons/ai";
 import { MdDataUsage } from "react-icons/md";
-import { IoIosAnalytics } from "react-icons/io"; // Another ML-related icon
+import { IoIosAnalytics } from "react-icons/io"; 
 
 import './styles.scss'
 
  
 
-const aboutContent = `As a MERN Stack Developer with 2 years of experience,
- I have a solid foundation in full-stack development and
-  a broad understanding of various programming languages.
-   My expertise in big data analytics and AI allows me to tackle 
-   complex challenges with technical precision. 
-   I am committed to delivering scalable, high-quality solutions while staying
-    ahead of emerging technologies. Focused on continuous learning and growth, 
-    I aim to contribute effectively to my future employer's success through my
-     skills in web development and data-driven solutions`;
+const aboutContent = `I am a MERN Stack Developer with 2 years of professional experience, 
+specializing in building scalable and efficient web applications.
+ Alongside my expertise in full-stack development,
+  I hold a postgraduate degree in Big Data Analytics and Artificial Intelligence,
+   which has fueled my passion for data-driven solutions and AI-powered applications. 
+
+With a solid foundation in programming and a continuous learning mindset,
+ I am eager to bridge the gap between web development and advanced data technologies.
+  I strive to deliver innovative, high-quality solutions that not only meet business objectives
+   but also push the boundaries of what's possible with modern technology.`;
+
 
 const personalInfo = [
   { label: "Name", value: "Suprim Thapa" },
